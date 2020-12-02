@@ -4,8 +4,6 @@
 ##' @author Peter Chang
 ##' @export
 
-source('./battleship.R')
-
 print("decide how many rows")
 
 my.rows <- as.numeric(readline(prompt="Enter number: "))
