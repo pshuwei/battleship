@@ -7,7 +7,7 @@
 ##' @author Peter Chang
 ##' @export
 
-battleship <- function(rows, columns) {
+play <- function(rows, columns) {
 
 my.rows <- rows
 
