@@ -5,7 +5,7 @@ Authors@R:
     person(given = "Peter",
            family = "Chang",
            role = c("aut", "cre"),
-           email = "pchagn27@ufl.edu",
+           email = "pchang27@ufl.edu",
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: Plays the battleship game.
 License: `use_mit_license()`, `use_gpl3_license()` or friends to
