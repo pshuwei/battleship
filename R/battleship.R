@@ -16,6 +16,10 @@ play <- function(rows, columns) {
   
   my.cols <- columns
   
+  cat("Welcome to Battleship!", "\n")
+  
+  cat("You have decided to have a board size of", my.rows, "rows and", my.cols, "columns.", "\n")
+  
   bracket <- "[?]"
   
   board <- matrix(NA, nrow = my.rows, ncol = my.cols)
@@ -31,7 +35,9 @@ play <- function(rows, columns) {
 
   print(board, quote = FALSE)
   
-  #deciding how big ship will be
+  cat("Generating ship size...", "\n")
+  
+  #randomly generates how big the ship will be
   if (nrow(board) < 3 | ncol(board) < 3 ) {
     shipsize <- sample(2, 1)
   } else{
@@ -40,14 +46,14 @@ play <- function(rows, columns) {
   
   cat("The size of the ship is", shipsize, "units", "\n")
   
-  #creating first part of ship
+  #randomly generating first part of ship
   shiprow <- sample(1:my.rows, 1)
   shipcol <- sample(LETTERS[1:my.cols], 1)
   cat(shipcol, shiprow, shipsize, "\n")
   
   direction <- c("left", "right", "up", "down")
   
-  #deciding how to extend the ship
+  #randomly deciding how to extend the ship in what direction
   if (shipcol == "A" & shiprow == 1) { #topleft corner
     direction2 <- sample(direction[-c(1,3)], 1)
   } else if (shipcol == LETTERS[my.cols] & shiprow == my.rows) { #bottomright
@@ -123,11 +129,12 @@ play <- function(rows, columns) {
   }
   
   parts_left = shipsize
-  print("Time to guess where the ship is!")
+  cat("There is an enemy ship of size", shipsize, "in the water.", "\n")
+  cat("Captain, you must destroy it!", "\n")
   
   while(parts_left != 0) {
     
-    print("What is your guess?")
+    cat("What is your guess?", "\n")
     
     my.colguess <- readline(prompt="Enter column letter: ")
     my.rowguess <- as.numeric(readline(prompt="Enter row number: "))
@@ -135,14 +142,14 @@ play <- function(rows, columns) {
     if (shipsize == 2) {
       if ((my.colguess == shipcol & my.rowguess == shiprow) | 
           (my.colguess == shipcol2 & my.rowguess == shiprow2)) {
-        print("Nice! You got part of the ship!")
+        cat("Nice! You got part of the ship!", "\n")
         board[my.rowguess,my.colguess] <- "[O]"
         print(board, quote = FALSE)
         parts_left = parts_left - 1
         cat("There are", parts_left, "parts left!", "\n")
         
       } else {
-        print("Aw you missed!")
+        cat("Aw you missed!", "\n")
         board[my.rowguess,my.colguess] <- "[X]"
         print(board, quote = FALSE)
         cat("There are still", parts_left, "parts left!", "\n")
@@ -152,14 +159,14 @@ play <- function(rows, columns) {
       if ((my.colguess == shipcol & my.rowguess == shiprow) | 
           (my.colguess == shipcol2 & my.rowguess == shiprow2) | 
           (my.colguess == shipcol3 & my.rowguess == shiprow3)) {
-        print("Nice! You got part of the ship!")
+        cat("Nice! You got part of the ship!", "\n")
         board[my.rowguess,my.colguess] <- "[O]"
         print(board, quote = FALSE)
         parts_left = parts_left - 1
         cat("There are", parts_left, "parts left!", "\n")
         
       } else {
-        print("Aw you missed!")
+        cat("Aw you missed!", "\n")
         board[my.rowguess,my.colguess] <- "[X]"
         print(board, quote = FALSE)
         cat("There are still", parts_left, "parts left!", "\n")
@@ -170,6 +177,6 @@ play <- function(rows, columns) {
   }
   
   if (parts_left == 0) {
-    print("Congrats you win!")
+    cat("Congrats you win!", "\n")
   }
 }
