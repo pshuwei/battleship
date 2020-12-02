@@ -49,7 +49,8 @@ play <- function(rows, columns) {
   #randomly generating first part of ship
   shiprow <- sample(1:my.rows, 1)
   shipcol <- sample(LETTERS[1:my.cols], 1)
-  cat(shipcol, shiprow, shipsize, "\n")
+  
+  #cat(shipcol, shiprow, shipsize, "\n")
   
   direction <- c("left", "right", "up", "down")
   
@@ -136,7 +137,7 @@ play <- function(rows, columns) {
     
     cat("What is your guess?", "\n")
     
-    my.colguess <- readline(prompt="Enter column letter: ")
+    my.colguess <- toupper(readline(prompt="Enter column letter: "))
     my.rowguess <- as.numeric(readline(prompt="Enter row number: "))
     
     if (shipsize == 2) {
