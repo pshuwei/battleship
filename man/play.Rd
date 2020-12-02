@@ -11,11 +11,8 @@ play(rows, columns)
 
 \item{columns}{number of columns for your board}
 }
-\value{
-the battleship game
-}
 \description{
-Randomly hides a ship onto the board and it's down to you to find the ship
+Randomly hides a ship onto a board size of m rows and n columns and it's down to you to find the ship!
 }
 \author{
 Peter Chang

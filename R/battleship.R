@@ -1,9 +1,8 @@
 ##' Play the battleship game
 ##'
-##' Randomly hides a ship onto the board and it's down to you to find the ship
+##' Randomly hides a ship onto a board size of m rows and n columns and it's down to you to find the ship!
 ##' @param rows number of rows for your board
 ##' @param columns number of columns for your board
-##' @return the battleship game
 ##' @author Peter Chang
 ##' @export
 
@@ -129,26 +128,44 @@ print("What is your guess?")
 my.colguess <- readline(prompt="Enter column letter: ")
 my.rowguess <- as.numeric(readline(prompt="Enter row number: "))
 
-if ((my.colguess == shipcol & my.rowguess == shiprow) | 
-    (my.colguess == shipcol2 & my.rowguess == shiprow2) | 
-    (my.colguess == shipcol3 & my.rowguess == shiprow3)) {
- print("Nice! You got part of the ship!")
- board[my.rowguess,my.colguess] <- "[O]"
- print(board, quote = FALSE)
- parts_left = parts_left - 1
- cat("There are", parts_left, "parts left!", "\n")
-
-} else {
- print("Aw you missed!")
- board[my.rowguess,my.colguess] <- "[X]"
- print(board, quote = FALSE)
- cat("There are still", parts_left, "parts left!", "\n")
+if (shipsize == 2) {
+  if ((my.colguess == shipcol & my.rowguess == shiprow) | 
+      (my.colguess == shipcol2 & my.rowguess == shiprow2)) {
+    print("Nice! You got part of the ship!")
+    board[my.rowguess,my.colguess] <- "[O]"
+    print(board, quote = FALSE)
+    parts_left = parts_left - 1
+    cat("There are", parts_left, "parts left!", "\n")
+    
+  } else {
+    print("Aw you missed!")
+    board[my.rowguess,my.colguess] <- "[X]"
+    print(board, quote = FALSE)
+    cat("There are still", parts_left, "parts left!", "\n")
+  }
+  
+} else if (shipsize == 3) {
+  if ((my.colguess == shipcol & my.rowguess == shiprow) | 
+      (my.colguess == shipcol2 & my.rowguess == shiprow2) | 
+      (my.colguess == shipcol3 & my.rowguess == shiprow3)) {
+    print("Nice! You got part of the ship!")
+    board[my.rowguess,my.colguess] <- "[O]"
+    print(board, quote = FALSE)
+    parts_left = parts_left - 1
+    cat("There are", parts_left, "parts left!", "\n")
+    
+  } else {
+    print("Aw you missed!")
+    board[my.rowguess,my.colguess] <- "[X]"
+    print(board, quote = FALSE)
+    cat("There are still", parts_left, "parts left!", "\n")
+  }
+  
 }
 
 }
 
 if (parts_left == 0) {
- print("Congrats you win!")
+  print("Congrats you win!")
 }
-
 }
