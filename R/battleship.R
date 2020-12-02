@@ -22,7 +22,7 @@ play <- function(rows, columns) {
   
   cat("You have decided to have a board size of", my.rows, "rows and", my.cols, "columns.", "\n")
   
-  bracket <- "[?]"
+  bracket <- "[ ]"
   
   board <- matrix(NA, nrow = my.rows, ncol = my.cols)
   colnames(board) <- LETTERS[1:my.cols]
@@ -141,14 +141,17 @@ play <- function(rows, columns) {
     
     #my.colguess <- toupper(readline(prompt="Enter column letter: "))
     
-    my.colguess <- "Z"
+    my.colguess <- "whatever"
+    outside <- TRUE
     options(warn=-1)
-    while ((my.colguess %in% LETTERS) == F | which(LETTERS == my.colguess) > my.cols) {
+    while ((my.colguess %in% LETTERS) == F | outside == TRUE) {
       my.colguess <- toupper(readline(prompt="Enter column letter: "))
       if ((my.colguess %in% LETTERS) == F) {
         cat("That's not a letter!", "\n")
       } else if (which(LETTERS == my.colguess) > my.cols) {
         cat("Your letter is outside the board!")
+      } else {
+        outside <- FALSE
       }
         
     }
