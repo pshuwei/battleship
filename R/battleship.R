@@ -10,7 +10,7 @@
 
 play <- function(rows, columns) {
 
-  stopifnot(is.numeric(rows), is.numeric(columns))
+  stopifnot(is.numeric(rows), is.numeric(columns), rows >1, columns >1)
   
   my.rows <- rows
   
@@ -39,7 +39,7 @@ play <- function(rows, columns) {
   
   #randomly generates how big the ship will be
   if (nrow(board) < 3 | ncol(board) < 3 ) {
-    shipsize <- sample(2, 1)
+    shipsize <- 2
   } else{
     shipsize <- sample(2:3, 1)
   }
