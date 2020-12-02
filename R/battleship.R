@@ -74,7 +74,7 @@ play <- function(rows, columns) {
     direction2 <- sample(direction, 1)
   }
   
-  print(direction2)
+  #print(direction2)
   
   #creating next part(s) of ship based on shipsize
   if (direction2 == 'left') {
@@ -119,14 +119,14 @@ play <- function(rows, columns) {
     }
   }
   
-  if (shipsize == 2) {
-    print(c(shipcol, shiprow), quote = FALSE)
-    print(c(shipcol2, shiprow2), quote = FALSE)
-  } else if (shipsize == 3) {
-    print(c(shipcol, shiprow), quote = FALSE)
-    print(c(shipcol2, shiprow2), quote = FALSE)
-    print(c(shipcol3, shiprow3), quote = FALSE)
-  }
+  #if (shipsize == 2) {
+    #print(c(shipcol, shiprow), quote = FALSE)
+    #print(c(shipcol2, shiprow2), quote = FALSE)
+  #} else if (shipsize == 3) {
+    #print(c(shipcol, shiprow), quote = FALSE)
+    #print(c(shipcol2, shiprow2), quote = FALSE)
+    #print(c(shipcol3, shiprow3), quote = FALSE)
+  #}
   
   parts_left = shipsize
   cat("There is an enemy ship of size", shipsize, "in the water.", "\n")
