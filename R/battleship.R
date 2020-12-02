@@ -13,14 +13,6 @@ my.rows <- rows
 
 my.cols <- columns
   
-#print("decide how many rows")
-
-#my.rows <- as.numeric(readline(prompt="Enter number: "))
-
-#print("decide how many columns")
-
-#my.cols <- as.numeric(readline(prompt="Enter number: "))
-
 bracket <- "[?]"
 
 board <- matrix(NA, nrow = my.rows, ncol = my.cols)
