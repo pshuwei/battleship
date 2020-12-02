@@ -137,8 +137,34 @@ play <- function(rows, columns) {
     
     cat("What is your guess?", "\n")
     
-    my.colguess <- toupper(readline(prompt="Enter column letter: "))
-    my.rowguess <- as.numeric(readline(prompt="Enter row number: "))
+    #my.colguess <- toupper(readline(prompt="Enter column letter: "))
+    
+    my.colguess <- "Z"
+    options(warn=-1)
+    while ((my.colguess %in% LETTERS) == F | which(LETTERS == my.colguess) > my.cols) {
+      my.colguess <- toupper(readline(prompt="Enter column letter: "))
+      if ((my.colguess %in% LETTERS) == F) {
+        cat("That's not a letter!", "\n")
+      } else if (which(LETTERS == my.colguess) > my.cols) {
+        cat("Your letter is outside the board!")
+      }
+        
+    }
+    options(warn=0)
+    
+    #my.rowguess <- as.numeric(readline(prompt="Enter row number: "))
+    
+    my.rowguess <- "whatever"
+    options(warn=-1)
+    while(is.na(my.rowguess)|!is.numeric(my.rowguess) | my.rowguess > my.rows) {
+      my.rowguess <- as.numeric(readline(prompt = "Enter row number:"))
+      if (is.na(my.rowguess)|!is.numeric(my.rowguess)) {
+        cat("That's not a number!")
+      } else if (my.rowguess > my.rows) {
+        cat("Your guess is outside the board!")
+      }
+    }
+    options(warn=0)
     
     if (shipsize == 2) {
       if ((my.colguess == shipcol & my.rowguess == shiprow) | 
