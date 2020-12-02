@@ -19,6 +19,9 @@ play(rows, columns)
 \description{
 Randomly hides a ship of size 2 or 3 onto a board size of m rows and n columns and it's down to you to find the ship!
 }
+\examples{
+play(5,5) creates a 5x5 board
+}
 \author{
 Peter Chang
 }
