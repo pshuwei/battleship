@@ -1,16 +1,25 @@
 ##' Play the battleship game
 ##'
 ##' Randomly hides a ship onto the board and it's down to you to find the ship
+##' @param rows number of rows for your board
+##' @param columns number of columns for your board
+##' @return the battleship game
 ##' @author Peter Chang
 ##' @export
 
-print("decide how many rows")
+battleship <- function(rows, columns) {
 
-my.rows <- as.numeric(readline(prompt="Enter number: "))
+my.rows <- rows
 
-print("decide how many columns")
+my.cols <- columns
+  
+#print("decide how many rows")
 
-my.cols <- as.numeric(readline(prompt="Enter number: "))
+#my.rows <- as.numeric(readline(prompt="Enter number: "))
+
+#print("decide how many columns")
+
+#my.cols <- as.numeric(readline(prompt="Enter number: "))
 
 bracket <- "[?]"
 
@@ -148,4 +157,6 @@ if ((my.colguess == shipcol & my.rowguess == shiprow) |
 
 if (parts_left == 0) {
  print("Congrats you win!")
+}
+
 }
