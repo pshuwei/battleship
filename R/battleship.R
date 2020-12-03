@@ -13,7 +13,7 @@
 
 play <- function(rows, columns) {
 
-  stopifnot(is.numeric(rows), is.numeric(columns), rows >1, columns >1)
+  stopifnot(is.numeric(rows), is.numeric(columns), rows >1, columns >1, rows <= 26)
   
   my.rows <- rows
   
