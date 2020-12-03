@@ -18,6 +18,7 @@ play(rows, columns)
 }
 \description{
 Randomly hides a ship of size 2 or 3 onto a board size of m rows and n columns and it's down to you to find the ship!
+The ship can only be placed horizontally or vertically, never diagonally.
 }
 \examples{
 play(5,5) creates a 5x5 board

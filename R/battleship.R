@@ -1,6 +1,7 @@
 ##' Play the battleship game
 ##'
 ##' Randomly hides a ship of size 2 or 3 onto a board size of m rows and n columns and it's down to you to find the ship!
+##' The ship can only be placed horizontally or vertically, never diagonally.
 ##' @param rows number of rows for your board
 ##' @param columns number of columns for your board
 ##' @return [X] you missed and no parts of the ship were struck
