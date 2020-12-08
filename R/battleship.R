@@ -7,9 +7,8 @@
 ##' @return X you missed and no parts of the ship were struck
 ##' @return O you struck part of the ship
 ##' @author Peter Chang
-##' @example
-##' play(5,5) creates a 5x5 board
 ##' @export
+
 
 play <- function(rows, columns) {
 
