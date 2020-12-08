@@ -8,6 +8,8 @@
 ##' @return O you struck part of the ship
 ##' @author Peter Chang
 ##' @export
+##' @examples
+##' #play(5,5) creates a 5x5 board
 
 play <- function(rows, columns) {
 
