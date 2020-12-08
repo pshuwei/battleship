@@ -12,16 +12,13 @@ play(rows, columns)
 \item{columns}{number of columns for your board}
 }
 \value{
-\link{X} you missed and no parts of the ship were struck
+X you missed and no parts of the ship were struck
 
-\link{O} you struck part of the ship
+O you struck part of the ship
 }
 \description{
 Randomly hides a ship of size 2 or 3 onto a board size of m rows and n columns and it's down to you to find the ship!
 The ship can only be placed horizontally or vertically, never diagonally.
-}
-\examples{
-play(5,5) creates a 5x5 board
 }
 \author{
 Peter Chang

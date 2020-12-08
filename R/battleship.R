@@ -4,12 +4,12 @@
 ##' The ship can only be placed horizontally or vertically, never diagonally.
 ##' @param rows number of rows for your board
 ##' @param columns number of columns for your board
-##' @return [X] you missed and no parts of the ship were struck
-##' @return [O] you struck part of the ship
+##' @return X you missed and no parts of the ship were struck
+##' @return O you struck part of the ship
 ##' @author Peter Chang
-##' @export
-##' @examples
+##' @example
 ##' play(5,5) creates a 5x5 board
+##' @export
 
 play <- function(rows, columns) {
 
