@@ -1,0 +1,36 @@
+---
+title: "battleship"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{battleship}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+Battleship is a guessing game where two players have a fleet of ships on two boards. The players' boards are hidden from each other so that one cannot see where the other's fleet are positioned.
+
+The board is usually a 10x10 grid like so:
+
+![](https://upload.wikimedia.org/wikipedia/commons/6/65/Battleship_game_board.svg)
+
+Here the gray rectangles represent the ships on the board.
+
+Taking alternate turns, each player then guesses a square. The other player then tells them whether the guess was correct or incorrect. The game ends when the entire fleet has been destroyed.
+
+For this package, I wanted to recreate this idea by having a randomly generated ship be hidden onto a board of nearly any size. Then the person playing the game can guess where the ship is.
+
+## How to use the package
+
+```{r setup, eval = FALSE}
+library(battleship)
+
+play(5,5) #creates a 5x5 board to find the ship
+```
